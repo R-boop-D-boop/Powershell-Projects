@@ -1,0 +1,7 @@
+$bee = write-output `u{1F41D}
+
+$script = invoke-webrequest https://courses.cs.washington.edu/courses/cse163/20wi/files/lectures/L04/bee-movie.txt -contenttype 'text/plain; charset=iso-8859-5' -skipcertificatecheck -skipheadervalidation -skiphttperrorcheck | format-custom -property content -depth 1
+
+$FullScript = $script + $bee
+
+$FullScript | Out-file “./TheBeeMovie”
